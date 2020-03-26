@@ -33,4 +33,4 @@ console.log(binaryArrayToNumber([0, 1, 1, 0])); // 6
 // const binaryArrayToNumber = arr => parseInt(arr.join(''), 2);
 
 // console.log(parseInt("1111", 2));
-console.log(parseInt("11"));
+// console.log(parseInt("11"));
