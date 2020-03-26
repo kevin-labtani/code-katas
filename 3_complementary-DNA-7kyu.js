@@ -11,8 +11,8 @@
 // DNAStrand ("GTAT") // return "CATA"
 
 function DNAStrand(dna) {
-  dnaArr = dna.split("");
-  complArr = [];
+  let dnaArr = dna.split("");
+  let complArr = [];
   dnaArr.forEach(el => {
     switch (el) {
       case "A":

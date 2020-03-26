@@ -14,7 +14,7 @@
 // ["Open", "Open", "Senior", "Open", "Open", "Senior"]
 
 function openOrSenior(data) {
-  resArray = [];
+  let resArray = [];
   data.forEach(el => {
     if (el[0] >= 55 && el[1] > 7) {
       resArray.push("Senior");

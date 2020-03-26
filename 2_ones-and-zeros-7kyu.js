@@ -16,7 +16,7 @@
 
 const binaryArrayToNumber = arr => {
   arr.reverse();
-  res = arr.shift();
+  let res = arr.shift();
 
   for (let index = 0; index < arr.length; index++) {
     res += arr[index] * Math.pow(2, index + 1);
