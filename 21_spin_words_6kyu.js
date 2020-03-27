@@ -4,13 +4,12 @@
 
 function spinWords(str) {
   let strArr = str.split(" ");
-  strArr.forEach((element, index, array) => {
+  strArr.forEach(element => {
     if (element.length >= 5) {
-      let newEl = element
+      element = element
         .split("")
         .reverse()
         .join("");
-      array[index] = newEl;
     }
   });
   return strArr.join(" ");
