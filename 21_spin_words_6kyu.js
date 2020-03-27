@@ -4,20 +4,16 @@
 
 function spinWords(str) {
   let strArr = str.split(" ");
-  let ansArr = [];
-  strArr.forEach(element => {
+  strArr.forEach((element, index, array) => {
     if (element.length >= 5) {
-      ansArr.push(
-        element
-          .split("")
-          .reverse()
-          .join("")
-      );
-    } else {
-      ansArr.push(element);
+      let newEl = element
+        .split("")
+        .reverse()
+        .join("");
+      array[index] = newEl;
     }
   });
-  return ansArr.join(" ");
+  return strArr.join(" ");
 }
 
 console.log(spinWords("Welcome"), "emocleW");
