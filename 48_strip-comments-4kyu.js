@@ -23,9 +23,9 @@ function solution(input, markers) {
     arr = input.split(markers[i]);
     arr[0] = arr[0].trim();
     arr[1] = arr[1].slice(arr[1].indexOf("\n")).trim();
-    input = arr[0] + "\n" + arr[1];
+    input = arr[0] + "\n" + arr[1] + "\n"; // since we look for indexOf("\n")
   }
-  return arr[0]
+  return input.trim()
 }
 
 console.log(solution("Q @b\nu\ne -e f g", ["@", "-"], "Q\nu\ne"));
