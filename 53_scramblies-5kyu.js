@@ -11,34 +11,26 @@
 // scramble('katas', 'steak') ==> False
 
 function scramble(str1, str2) {
-  let frequencyCounter2 = {};
-  let frequencyCounter1 = {};
-
-  for (let i = 0; i < str2.length; i++) {
-    let letter = str2[i];
-    frequencyCounter2[letter]
-      ? (frequencyCounter2[letter] += 1)
-      : (frequencyCounter2[letter] = 1);
-  }
+  let frequencyCounter = {};
 
   for (let i = 0; i < str1.length; i++) {
     let letter = str1[i];
-    frequencyCounter1[letter]
-      ? (frequencyCounter1[letter] += 1)
-      : (frequencyCounter1[letter] = 1);
+    frequencyCounter[letter]
+      ? (frequencyCounter[letter] += 1)
+      : (frequencyCounter[letter] = 1);
   }
-  // console.log(frequencyCounter2, frequencyCounter1);
 
-  for (let key in frequencyCounter2) {
-    if (!(key in frequencyCounter1)) {
-      return false;
-    }
-    if (frequencyCounter2[key] > frequencyCounter1[key]) {
+  for (let i = 0; i < str2.length; i++) {
+    let letter = str2[i];
+    if (frequencyCounter[letter]) {
+      frequencyCounter[letter] -= 1;
+    } else {
       return false;
     }
   }
   return true;
 }
+
 console.log(scramble("rkqodlw", "world"), true);
 console.log(scramble("cedewaraaossoqqyt", "codewars"), true);
 console.log(scramble("katas", "steak"), false);
