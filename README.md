@@ -65,7 +65,7 @@ Create a window which can either be an array or number from one position to anot
 Depending on a certain condition, the wondow either increases or closes (and a new window is created).  
 Very useful for keeping track of a subset of data in an array/string/etc.
 
-### Divide and conquer
+### Divide and conquer pattern
 
 Divide a dataset into smaller chunks and then repeat a process with a subset of data.  
 This pattern can tremendously decrease time complexity.
