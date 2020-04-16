@@ -47,3 +47,9 @@ An algorithm is a process or set of steps to accomplish a certain task.
   - Can you improve the performance of your solution?
   - Can you think of other ways to refactor?
   - How have other people solved this problem?
+
+## Problem solving patterns
+
+### Frequency counter pattern
+
+This pattern uses objects or sets to collect values/frequencies of values. This can often avoid the need for nested loops or O(N^2) operations with arrays or strings.
