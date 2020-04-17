@@ -62,10 +62,58 @@ Very efficient for solving problems with minimal space complexity as well
 ### Sliding window pattern
 
 Create a window which can either be an array or number from one position to another.  
-Depending on a certain condition, the wondow either increases or closes (and a new window is created).  
+Depending on a certain condition, the window either increases or closes (and a new window is created).  
 Very useful for keeping track of a subset of data in an array/string/etc.
 
 ### Divide and conquer pattern
 
 Divide a dataset into smaller chunks and then repeat a process with a subset of data.  
 This pattern can tremendously decrease time complexity.
+
+## Recursion
+
+Recursion is a process (function, here) that calls itself.
+
+### The call stack
+
+Anytime a function is invoked it is placed (push) on the top of the callstack  
+When JavaScript sees the return keyword or when the function ends, the compiler will remove (pop) the top item of the stack. When we write recursive functions, we keep pushing new functions onto the call stack.
+
+### How recursive functions work
+
+Two essential parts of a recursive function:
+
+1. The base case is the condition when the recursion ends.
+2. Invoke the same function with a different input until you reach your base case!
+
+### Common recursion pitfalls
+
+- no base case, or base case is wrong
+- forgetting to return or returning the wrong thing
+- stack overflow
+
+### Helper method recursion
+
+A pattern where we have an outer function that's not recursive which call a recursive inner function
+
+```js
+function outer(input) {
+  let outerScopedVariable = [];
+
+  function helper(helperInput) {
+    // modify the outerScopedVariable
+    helper(helperInput--);
+  }
+
+  helper(input);
+
+  return outerScopedVariable;
+}
+```
+
+We do it this way because we need to collect results in an array that's outside the recursion, if it was inside the array would be reset every time.
+
+### Pure recursion
+
+Alternative to helper method recursion, see example.  
+For arrays, use methods like slice, spread operator and concat that make copies of arrays so you do not mutate them.
