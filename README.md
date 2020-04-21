@@ -117,3 +117,24 @@ We do it this way because we need to collect results in an array that's outside 
 
 Alternative to helper method recursion, see example.  
 For arrays, use methods like slice, spread operator and concat that make copies of arrays so you do not mutate them.
+
+## Searching Algorithms
+
+### Linear search
+
+Given an array, the simplest way to serch for a value is to look at every element in the array and check if it's the value we want.  
+indexOf, includes, find, findIndex are all doing this.  
+Linear search is O(n)
+
+### Binary Search
+
+Only works on sorted array  
+Rather than elinimating one element at a time, you can eliminate half of the reamining elements at a time  
+We use divide and conquer; pick a pivot in the middle of the array, compare it to the value we're looking for and get rid of half the array depending on if the value ir > or < the pivot  
+Binary search is O(log n)
+
+### Naive string search
+
+We want to count the number of times a smaller string appears in a lnger string  
+A straightforward approach involves checking pairs of characters individually  
+Naive string search is O(n^2)
