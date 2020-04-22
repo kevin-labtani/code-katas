@@ -138,3 +138,27 @@ Binary search is O(log n)
 We want to count the number of times a smaller string appears in a lnger string  
 A straightforward approach involves checking pairs of characters individually  
 Naive string search is O(n^2)
+
+## Sorting algorithms
+
+JavaScript built in sort method has some quirks, eg: sorting numbers like [6,4,15,10] will give us [10,15,4,6], that's because the default sort order is according to string Unicode code points. So you usually pass in a comparator function that looks at a pair of elements (a,b); if the function returns a negative number, `a` comes before `b`; if the function returns a positive number, `b` comes before `a`; if it returns 0, `a` and `b` are the same as far as the sort is concerned.
+
+Many sorting algorithms involve some type of swapping functionality (eg. swapping two numbers to put them in order)
+
+```js
+// ES5
+function swap(arr, idx1, idx2) {
+  var temp = arr[idx1];
+  arr[idx1] = arr[idx2];
+  add[idx2] = temp;
+}
+// ES2015
+const swap = (arr, idx1, idx2) => {
+  [arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1]];
+};
+```
+
+### Bubble sort
+
+A sorting algorithm where the largest values bubble up to the top.  
+Not that efficient (O(N^2), best case is O(N) if data almost already sorted) or commonly used.
