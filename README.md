@@ -161,9 +161,16 @@ const swap = (arr, idx1, idx2) => {
 ### Bubble sort
 
 A sorting algorithm where the largest values bubble up to the top.  
-Not that efficient (O(N^2), best case is O(N) if data almost already sorted) or commonly used.
+Bubble sort Time complexity is O(N^2), best case is O(N) if data almost already sorted), Space complexity is O(1)
 
-## Selection sort
+### Selection sort
 
 Similar to bubble sort, but instead of first placing large values into sorted position, it places small values into sorted positions.  
-Selection sort is O(N^2)
+Selection sort Time complexity is O(N^2) Space complexity is O(1)
+Selection sort has less swaps than bubble sort, we only make 1 swap at the end of each loop
+
+### Insertion sort
+
+Build up the sort by gradually creating a larger left half which is always sorted  
+Insertion sort Time complexity is is O(N^2), best case is O(N) Space complexity is O(1)  
+If the data is "coming in"/streaming in live, because of the way that insertion sort, we can use this algo to sort the incoming data
