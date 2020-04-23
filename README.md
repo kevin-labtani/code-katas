@@ -162,3 +162,8 @@ const swap = (arr, idx1, idx2) => {
 
 A sorting algorithm where the largest values bubble up to the top.  
 Not that efficient (O(N^2), best case is O(N) if data almost already sorted) or commonly used.
+
+## Selection sort
+
+Similar to bubble sort, but instead of first placing large values into sorted position, it places small values into sorted positions.  
+Selection sort is O(N^2)
