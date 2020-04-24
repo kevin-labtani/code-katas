@@ -139,7 +139,7 @@ We want to count the number of times a smaller string appears in a lnger string
 A straightforward approach involves checking pairs of characters individually  
 Naive string search is O(n^2)
 
-## Sorting algorithms
+## Basic Sorting algorithms
 
 JavaScript built in sort method has some quirks, eg: sorting numbers like [6,4,15,10] will give us [10,15,4,6], that's because the default sort order is according to string Unicode code points. So you usually pass in a comparator function that looks at a pair of elements (a,b); if the function returns a negative number, `a` comes before `b`; if the function returns a positive number, `b` comes before `a`; if it returns 0, `a` and `b` are the same as far as the sort is concerned.
 
@@ -174,3 +174,15 @@ Selection sort has less swaps than bubble sort, we only make 1 swap at the end o
 Build up the sort by gradually creating a larger left half which is always sorted  
 Insertion sort Time complexity is is O(N^2), best case is O(N) Space complexity is O(1)  
 If the data is "coming in"/streaming in live, because of the way that insertion sort, we can use this algo to sort the incoming data
+
+### Intermediate Sorting algorithms
+
+The sorting algos we've seen so far don't scale well  
+There's a family of sorting algorithms that can improve time cmplexity from O(N^2) to O(N log N)
+
+### Merge sort
+
+It's a combination of merging and sorting  
+Exploits the fact that arrays of 0 or 1 elements are always sorted  
+Works by decomposing an array into smaller arrays of 0 or 1 elements, then building up a newly sorted array (divide & conquer)  
+Time complexity (best, worst and average) is O(N log N) as we have to do log N array decomposition, and we have O(N) comparisons per decomposition; space complexity is O(N)
