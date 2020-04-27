@@ -175,7 +175,7 @@ Build up the sort by gradually creating a larger left half which is always sorte
 Insertion sort Time complexity is is O(N^2), best case is O(N) Space complexity is O(1)  
 If the data is "coming in"/streaming in live, because of the way that insertion sort, we can use this algo to sort the incoming data
 
-### Intermediate Sorting algorithms
+## Intermediate Sorting algorithms
 
 The sorting algos we've seen so far don't scale well  
 There's a family of sorting algorithms that can improve time cmplexity from O(N^2) to O(N log N)
@@ -186,3 +186,9 @@ It's a combination of merging and sorting
 Exploits the fact that arrays of 0 or 1 elements are always sorted  
 Works by decomposing an array into smaller arrays of 0 or 1 elements, then building up a newly sorted array (divide & conquer)  
 Time complexity (best, worst and average) is O(N log N) as we have to do log N array decomposition, and we have O(N) comparisons per decomposition; space complexity is O(N)
+
+### Quick sort
+
+Exploits the fact that arrays of 0 or 1 elements are always sorted  
+Works by selecting one element (called the "pivot") and finding the index where the pivot should end up in the sorted array  
+Time complexity is O(N log N) at best and at average, O(N^2) at worst (when the pivot is the biggest or smallest element); space complexity is O(log N)
