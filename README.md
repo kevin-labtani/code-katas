@@ -191,4 +191,4 @@ Time complexity (best, worst and average) is O(N log N) as we have to do log N a
 
 Exploits the fact that arrays of 0 or 1 elements are always sorted  
 Works by selecting one element (called the "pivot") and finding the index where the pivot should end up in the sorted array  
-Time complexity is O(N log N) at best and at average, O(N^2) at worst (when the pivot is the biggest or smallest element); space complexity is O(log N)
+Time complexity is O(N log N) at best and at average, O(N^2) at worst (when the pivot chosen is the biggest or smallest element); space complexity is O(log N)
