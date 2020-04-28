@@ -192,3 +192,9 @@ Time complexity (best, worst and average) is O(N log N) as we have to do log N a
 Exploits the fact that arrays of 0 or 1 elements are always sorted  
 Works by selecting one element (called the "pivot") and finding the index where the pivot should end up in the sorted array  
 Time complexity is O(N log N) at best and at average, O(N^2) at worst (when the pivot chosen is the biggest or smallest element); space complexity is O(log N)
+
+### Radix sort
+
+So far we've seen comparison sorts algorithms that are at best O(N log N) average time complexity; can we do better than that? yes, but not by doing comparisons.  
+Radix sort works on list of numbers; it never makes comparisons between elements; it exploits the fact that information about the size of a number is encoded in the number of digits, more digits means a bigger number  
+Time complexity is O(NK) at best, average and worst (n is the number of numbers we're sorting, k is the length of those numbers); space complexity is O(N + K)
