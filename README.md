@@ -198,3 +198,7 @@ Time complexity is O(N log N) at best and at average, O(N^2) at worst (when the 
 So far we've seen comparison sorts algorithms that are at best O(N log N) average time complexity; can we do better than that? yes, but not by doing comparisons.  
 Radix sort works on list of numbers; it never makes comparisons between elements; it exploits the fact that information about the size of a number is encoded in the number of digits, more digits means a bigger number  
 Time complexity is O(NK) at best, average and worst (n is the number of numbers we're sorting, k is the length of those numbers); space complexity is O(N + K)
+
+## Intro to data structures
+
+Data structures are collections of  vales, the relationship among them,a nd the functions or operations that can be applied to the data  
