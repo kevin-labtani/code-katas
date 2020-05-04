@@ -202,3 +202,12 @@ Time complexity is O(NK) at best, average and worst (n is the number of numbers 
 ## Intro to data structures
 
 Data structures are collections of  vales, the relationship among them,a nd the functions or operations that can be applied to the data  
+
+### Singly Linked List
+
+A linked list is a data structure that contains a head, tail and length property  
+Linked lists consist of nodes, and each node has a value and a pointer to another node or null  
+Compared with arrays:
+  - no indexes
+  - connected via nodes with a next pointer
+  - random access isn't allowed (need to traverse from the beginning)
