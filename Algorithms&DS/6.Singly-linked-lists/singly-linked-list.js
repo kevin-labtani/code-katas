@@ -57,6 +57,24 @@ class SinglylinkedList {
     }
     return current;
   }
+
+  // SHIFT
+  // if there are no nodes, return undefined
+  // store the current head property in a variable
+  // set the head property to be the current head's next property
+  // decrement the length by 1
+  // return the value of the node removed
+  shift() {
+    if (!this.head) return undefined;
+    let current = this.head;
+    this.head = current.next;
+    this.length--;
+    if (this.length === 0) {
+      // edge case: reset head and tail if the list is empty
+      this.tail = null;
+    }
+    return current;
+  }
 }
 
 let list = new SinglylinkedList();
@@ -64,6 +82,9 @@ list.push("hello");
 list.push("goodbye");
 list.pop();
 list.push("hello again");
+list.push("goodbye again");
+list.shift();
+
 
 console.log(list);
 console.log(list.length);
