@@ -125,6 +125,31 @@ class SinglylinkedList {
     }
     return false;
   }
+
+  // INSERT (add a node to the lined list at a specific position)
+  // takes an index and a value
+  // create a new node using the value passed to the function
+  // if the index is less than zero or greater than the length of the list, return false
+  // if the index is the same as the length, push a new node to the end of the list
+  // if the index is 0, unsift a new node to the start of the list
+  // otherwise, using the get method, access the node at the index - 1
+  // set the next property on that node to be the new node
+  // set the next property on the new node to be the previous next
+  // increment the length
+  // return true
+  insert(index, value) {
+    if (index < 0 || index > this.length) return false;
+    if (index === this.length) return !!this.push(value); // !! double negate and coerce into boolean true so that the method lony returns ture or false (and not the actual list)
+    if (index === 0) return !!this.unshift(value);
+    
+    let newNode = new Node(value);
+    let prevNode = this.get(index - 1);
+    let temp = prevNode.next;
+    prevNode.next = newNode;
+    newNode.next = temp;
+    this.length++;
+    return true;
+  }
 }
 
 let list = new SinglylinkedList();
@@ -136,7 +161,12 @@ list.push("goodbye again");
 console.log(list.shift());
 list.unshift("this is getting confusing");
 console.log(list.get(2));
-console.log(list.set(2, "actually, not leaving"))
+console.log(list.set(2, "actually, not leaving"));
+console.log(list.insert(1, "inserted node"));
+console.log(list.get(0));
+console.log(list.get(1));
+console.log(list.get(2));
+console.log(list.get(3));
 
 console.log(list);
 console.log(list.length);
