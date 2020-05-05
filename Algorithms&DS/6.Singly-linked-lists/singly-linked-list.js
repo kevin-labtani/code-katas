@@ -96,16 +96,32 @@ class SinglylinkedList {
     this.length++;
     return this;
   }
+
+  // GET (retrieve a node by its position in the linked list)
+  // accept an index
+  // if the index is less than zero or greater than or equal to the length of the list, return null
+  // loop through the lost until you reach the index and return the nnode at that specific index
+  get(index) {
+    if (index < 0 || index >= this.length) return null;
+    let count = 0;
+    let current = this.head;
+    while (count !== index) {
+      current = current.next;
+      count++;
+    }
+    return current;
+  }
 }
 
 let list = new SinglylinkedList();
 list.push("hello");
 list.push("goodbye");
-list.pop();
+console.log(list.pop());
 list.push("hello again");
 list.push("goodbye again");
-list.shift();
-list.unshift("this is getting confusing")
+console.log(list.shift());
+list.unshift("this is getting confusing");
+console.log(list.get(2));
 
 console.log(list);
 console.log(list.length);
