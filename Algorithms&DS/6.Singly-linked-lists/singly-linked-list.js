@@ -111,6 +111,20 @@ class SinglylinkedList {
     }
     return current;
   }
+
+  // SET (change the value of a node based on its position in the linked list)
+  // accept an index and a value
+  // use the get method to find the specific node
+  // if the node isn't found, return false
+  // otherwise, set the calue of that node to be the value passed to the function and return true
+  set(index, value) {
+    let foundNode = this.get(index);
+    if (foundNode) {
+      foundNode.val = value;
+      return true;
+    }
+    return false;
+  }
 }
 
 let list = new SinglylinkedList();
@@ -122,6 +136,7 @@ list.push("goodbye again");
 console.log(list.shift());
 list.unshift("this is getting confusing");
 console.log(list.get(2));
+console.log(list.set(2, "actually, not leaving"))
 
 console.log(list);
 console.log(list.length);
