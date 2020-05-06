@@ -170,6 +170,30 @@ class SinglylinkedList {
     this.length--;
     return removed;
   }
+
+  // REVERSE
+  // swap the head and tail
+  // create a variable called next
+  // create a variable called prev
+  // create a variable called node and initialize it to the head property
+  // loop through the list
+  // set newt to be the next property on to wathever prev is
+  // set prev to be the value of the node variable
+  // set the node variable to be the value of the next variable
+  reverse() {
+    let node = this.head;
+    this.head = this.tail;
+    this.tail = node;
+    let prev = null; // we want the tail.next to be null
+    let next;
+    for (let i = 0; i < this.length; i++) {
+      next = node.next;
+      node.next = prev;
+      prev = node;
+      node = next;
+    }
+    return this;
+  }
 }
 
 let list = new SinglylinkedList();
@@ -188,6 +212,7 @@ console.log(list.get(1));
 console.log(list.get(2));
 console.log(list.get(3));
 console.log(list.remove(1));
+console.log(list.reverse());
 
 console.log(list);
 console.log(list.length);
