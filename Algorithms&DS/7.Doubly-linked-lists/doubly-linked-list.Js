@@ -55,13 +55,38 @@ class DoublyLinkedList {
     this.length--;
     return poppedNode;
   }
+
+  // SHIFT
+  // if there are no nodes, return undefined
+  // store the current head property in a variable
+  // if the length is 1, set the had and the tail to be null
+  // set the head property to be the old head's next property
+  // set the new head's prev property to be null
+  // set the old head's next to be null
+  // decrement the length by 1
+  // return the old head
+  shift() {
+    if (!this.head) return undefined;
+    let oldHead = this.head;
+    if (this.length === 1) {
+      this.head = null;
+      this.tail = null;
+    } else {
+      this.head = oldHead.next;
+      this.head.prev = null;
+      oldHead.next = null;
+    }
+    this.length--;
+    return oldHead;
+  }
 }
 
 let list = new DoublyLinkedList();
 list.push("hello");
 list.push("how are you?");
-list.push("goodbye");
+// list.push("fine I hope?");
+// list.push("goodbye");
 console.log(list.pop());
-
+console.log(list.shift());
 
 console.log(list);
