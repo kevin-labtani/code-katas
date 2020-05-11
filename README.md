@@ -219,3 +219,9 @@ Big O of Singly Linked Lists:
 - removal: O(1) for 1st item or O(N) for last item
 - searching O(N)
 - access O(N)
+
+Singly linked lists are excellent alternatives to arrays when insertion and deletion at the beginning are frequently required
+
+### Doubly Linked List
+
+Almost identital to Singly Linked Lists, except every node has another pointer, to the previous node!
