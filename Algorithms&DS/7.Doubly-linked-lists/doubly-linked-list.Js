@@ -102,6 +102,50 @@ class DoublyLinkedList {
     this.length++;
     return this;
   }
+
+  // GET (retrieve a node by its position in the linked list)
+  // accept an index
+  // if the index is less than zero or greater than or equal to the length of the list, return null
+  // if the index is <= half the length of the list:
+  //    loop through the lsit starting form the head and loop towards the middle
+  //    return the node once found
+  // if the index is > half the length of the list:
+  //    loop through the lsit starting form the tail and loop towards the middle
+  //    return the node once found
+  get(index) {
+    if (index < 0 || index >= this.length) return null;
+    let count, current;
+    if (index <= this.length / 2) {
+      count = 0;
+      current = this.head;
+      while (count !== index) {
+        current = current.next;
+        count++;
+      }
+    } else {
+      count = this.length - 1;
+      current = this.tail;
+      while (count !== index) {
+        current = current.prev;
+        count--;
+      }
+    }
+    return current;
+  }
+
+  // SET (change the value of a node based on its position in the linked list)
+  // accept an index and a value
+  // use the get method to find the specific node
+  // if the node isn't found, return false
+  // otherwise, set the value of that node to be the value passed to the function and return true
+  set(index, value) {
+    let foundNode = this.get(index);
+    if (foundNode) {
+      foundNode.val = value;
+      return true;
+    }
+    return false;
+  }
 }
 
 let list = new DoublyLinkedList();
@@ -111,6 +155,8 @@ list.push("fine I hope?");
 list.push("goodbye");
 console.log(list.pop());
 console.log(list.shift());
-list.unshift("new first")
+list.unshift("new first");
+console.log(list.get(2));
+console.log(list.set(1, "set value"));
 
 console.log(list);
