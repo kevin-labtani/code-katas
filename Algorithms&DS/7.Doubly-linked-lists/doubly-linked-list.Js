@@ -146,6 +146,58 @@ class DoublyLinkedList {
     }
     return false;
   }
+
+  // INSERT (add a node to the lined list at a specific position)
+  // takes an index and a value
+  // create a new node using the value passed to the function
+  // if the index is less than zero or greater than the length of the list, return false
+  // if the index is the same as the length, push a new node to the end of the list
+  // if the index is 0, unsift a new node to the start of the list
+  // otherwise, using the get method, access the node at the index - 1
+  // set the next and prev properties on the correct notes to lik everything together
+  // increment the length by 1
+  // return true
+  insert(index, value) {
+    if (index < 0 || index > this.length) return false;
+    if (index === this.length) return !!this.push(value); // !! double negate and coerce into boolean true so that the method lony returns ture or false (and not the actual list)
+    if (index === 0) return !!this.unshift(value);
+
+    let newNode = new Node(value);
+    let beforeNode = this.get(index - 1);
+    let afterNode = beforeNode.next;
+
+    beforeNode.next = newNode;
+    newNode.prev = beforeNode;
+    newNode.next = afterNode;
+    afterNode.prev = newNode;
+    this.length++;
+    return true;
+  }
+
+  // REMOVE (remove a node from the linked list at a specific position)
+  // if the index is negative or greater than the length, return null
+  // if the index is the same as the length-1, pop
+  // if the index is zero, shift
+  // otherwise, using the get method, retrieve the item to be removed
+  // update the next and prev properties to remove the found node from the list
+  // set newt and prev to null on the found node
+  // decrement the length
+  // return the value of the node removed
+  remove(index) {
+    if (index < 0 || index >= this.length) return undefined;
+    if (index === 0) return this.shift();
+    if (index === this.length - 1) return this.pop();
+
+    let removedNode = this.get(index);
+    let beforeNode = removedNode.prev;
+    let afterNode = removedNode.next;
+    beforeNode.next = afterNode;
+    afterNode.prev = beforeNode;
+    removedNode.next = null;
+    removedNode.prev = null;
+    this.length--;
+    return removedNode;
+  }
 }
 
 let list = new DoublyLinkedList();
@@ -158,5 +210,7 @@ console.log(list.shift());
 list.unshift("new first");
 console.log(list.get(2));
 console.log(list.set(1, "set value"));
+console.log(list.insert(1, "insert value"));
+console.log(list.remove(1));
 
 console.log(list);
