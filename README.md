@@ -224,4 +224,12 @@ Singly linked lists are excellent alternatives to arrays when insertion and dele
 
 ### Doubly Linked List
 
-Almost identital to Singly Linked Lists, except every node has another pointer, to the previous node!
+Almost identital to Singly Linked Lists, except every node has another pointer, to the previous node!  
+They do take up more memory considering the extra pointer
+
+Big O of Doubly Linked Lists:
+
+- insertion: O(1)
+- removal: O(1) (always, that's a difference from singly linked list)
+- searching O(N) (O(N/2), but that's still O(N))
+- access O(N)
