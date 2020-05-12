@@ -233,3 +233,17 @@ Big O of Doubly Linked Lists:
 - removal: O(1) (always, that's a difference from singly linked list)
 - searching O(N) (O(N/2), but that's still O(N))
 - access O(N)
+
+### Stack
+
+A LIFO data structure  
+Used for managing function invocations, for Undo/Redo, for Routing (the history object)  
+Can be implemented with JS arrays (just use push() and pop() or unsift() and shift() to add and remove)  
+Insertion and removal should be constant time with stacks
+
+Big O of Stacks:
+
+- insertion: O(1)
+- removal: O(1)
+- searching O(N)
+- access O(N)
