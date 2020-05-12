@@ -217,8 +217,8 @@ Big O of Singly Linked Lists:
 
 - insertion: O(1)
 - removal: O(1) for 1st item or O(N) for last item
-- searching O(N)
-- access O(N)
+- searching: O(N)
+- access: O(N)
 
 Singly linked lists are excellent alternatives to arrays when insertion and deletion at the beginning are frequently required
 
@@ -231,19 +231,33 @@ Big O of Doubly Linked Lists:
 
 - insertion: O(1)
 - removal: O(1) (always, that's a difference from singly linked list)
-- searching O(N) (O(N/2), but that's still O(N))
-- access O(N)
+- searching: O(N) (O(N/2), but that's still O(N))
+- access: O(N)
 
 ### Stack
 
 A LIFO data structure  
 Used for managing function invocations, for Undo/Redo, for Routing (the history object)  
-Can be implemented with JS arrays (just use push() and pop() or unsift() and shift() to add and remove)  
+Can be implemented with JS arrays (just use push() and pop() or unshift() and shift() to add and remove)  
 Insertion and removal should be constant time with stacks
 
 Big O of Stacks:
 
 - insertion: O(1)
 - removal: O(1)
-- searching O(N)
-- access O(N)
+- searching: O(N)
+- access: O(N)
+
+### Queues
+
+A FIFO data structure  
+Used for background tasks,uploading resources, printing / task processing
+Can be implemented with JS arrays (pick between add to the beginning or the end and then use push() and shift() or unshift() and pop())  
+Insertion and removal should be constant time with queues
+
+Big O of Queues:
+
+- insertion: O(1)
+- removal: O(1)
+- searching: O(N)
+- access: O(N)
