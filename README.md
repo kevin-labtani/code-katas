@@ -261,3 +261,40 @@ Big O of Queues:
 - removal: O(1)
 - searching: O(N)
 - access: O(N)
+
+### Trees
+
+A data structure that consists of nodes in a parent/child relationship  
+Trees are nonlinear  
+A node can only point to a child
+
+Definitions:
+
+- The **root** is the top node in a tree
+- A **child** is a node directly connected to another node when moving away from the root
+- A **parent** is the ocnverse notion of a child
+- **siblings** are a group of nodes with the same parent
+- A **leaf** is a node with no children
+- An **edge** is the connection between one node and another
+
+Usage:
+
+- HTML DOM
+- Network routing
+- Abstract syntax tree
+- Artificial intelligence
+- Folders in operating systems
+- JSON
+
+### Binary Search Trees
+
+- Every parent node has at most two children
+- Every node to the left of a parent node is always less than the parent
+- Every node to the right of a parent node is always greater than the parent
+
+Big O of BST:
+
+- insertion: O(log N) (best and average)
+- searching: O(log N) (best and average)
+
+not guaranteed though, some BST configurations are really slow (eg (3 > 17 > 19 > 32 > 34 > 63), ie only one sided tree, like a linked-list, is O(N); but really you should just restructure the tree and have 19 as the root and resort all the other values)
