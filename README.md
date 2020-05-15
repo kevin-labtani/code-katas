@@ -298,3 +298,11 @@ Big O of BST:
 - searching: O(log N) (best and average)
 
 not guaranteed though, some BST configurations are really slow (eg (3 > 17 > 19 > 32 > 34 > 63), ie only one sided tree, like a linked-list, is O(N); but really you should just restructure the tree and have 19 as the root and resort all the other values)
+
+### Tree traversal
+
+- Breath First Search
+- Deph First Search
+  - inOrder
+  - PreOrder
+  - PostOrder
