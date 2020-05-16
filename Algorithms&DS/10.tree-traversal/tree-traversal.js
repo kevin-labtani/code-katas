@@ -1,11 +1,3 @@
-// create a queue (this can be an array) and a variable to store the values of nodes visited
-// place the root of the node in the queue
-// loop as long as there is anything in the queue
-//    dequeue a node from the queue and push the value of the node into the variable that store the nodes
-//    if there is a left property on the node dequeued - add it to the queue
-//    if there is a right property on the node dequeued - add it to the queue
-// return the variable that stores the values
-
 class Node {
   constructor(value) {
     this.value = value;
@@ -62,6 +54,13 @@ class BinarySearchTree {
   }
 
   // BREATH FIRST SEARCH
+  // create a queue (this can be an array) and a variable to store the values of nodes visited
+  // place the root of the node in the queue
+  // loop as long as there is anything in the queue
+  //    dequeue a node from the queue and push the value of the node into the variable that store the nodes
+  //    if there is a left property on the node dequeued - add it to the queue
+  //    if there is a right property on the node dequeued - add it to the queue
+  // return the variable that stores the values
   BFS() {
     let data = [];
     let queue = [];
@@ -76,6 +75,27 @@ class BinarySearchTree {
     }
     return data;
   }
+
+  // DEPTH FIRST SEARCH PreOrder
+  // create a variable to store the values of the nodes visited
+  // store the root of the BST in a variable called current
+  // write a helper funciton which accets a node
+  //    push the value of the node to the variable that stores the values
+  //    if the node has a left property, call the helper function with the left property on the noed
+  //    if the node has a right property, call the helper function with the right property on the noed
+  // invoke the leper function with the current variable
+  // return the array of values
+  DFSPreOrder() {
+    let data = [];
+    let current = this.root;
+    function traverse(node) {
+      data.push(node.value);
+      if (node.left) traverse(node.left);
+      if (node.right) traverse(node.right);
+    }
+    traverse(current);
+    return data;
+  }
 }
 
 let tree = new BinarySearchTree();
@@ -85,5 +105,9 @@ tree.insert(15);
 tree.insert(3);
 tree.insert(8);
 tree.insert(20);
+//         10
+//      6    15
+//    3  8     20
 console.log(tree);
 console.log(tree.BFS());
+console.log(tree.DFSPreOrder());

@@ -303,6 +303,6 @@ not guaranteed though, some BST configurations are really slow (eg (3 > 17 > 19 
 
 - Breath First Search
 - Deph First Search
-  - inOrder
   - PreOrder
   - PostOrder
+  - inOrder
