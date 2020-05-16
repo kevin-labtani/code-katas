@@ -302,7 +302,13 @@ not guaranteed though, some BST configurations are really slow (eg (3 > 17 > 19 
 ### Tree traversal
 
 - Breath First Search
-- Deph First Search
+- Depth First Search
   - PreOrder
   - PostOrder
   - inOrder
+
+BFS has a lof of nodes to keep track of (in the queue we use to keep track of the nodes visited), it has a bigger space complexity than DFS for big, large trees  
+Time complexity is the same for BFS and DFS  
+
+DFS InOrder is used commonly with BST as it gets us the nodes in the tree in their undrelying order  
+DFS PreOrder can be used to "export" a tree structure so that it is easily reconstructed or copied  
