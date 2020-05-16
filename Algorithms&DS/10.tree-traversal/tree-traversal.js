@@ -98,7 +98,7 @@ class BinarySearchTree {
   }
 
   // DEPTH FIRST SEARCH PostOrder
-  // same as PreOrder but we we go all the way to the left then all the way to the right and then we visit the nodes (the root is the last node visited):
+  // same as PreOrder but we go all the way to the left then all the way to the right and then we visit the nodes (the root is the last node visited):
   // create a variable to store the values of the nodes visited
   // store the root of the BST in a variable called current
   // write a helper funciton which accets a node
@@ -114,6 +114,28 @@ class BinarySearchTree {
       if (node.left) traverse(node.left);
       if (node.right) traverse(node.right);
       data.push(node.value);
+    }
+    traverse(current);
+    return data;
+  }
+
+  // DEPTH FIRST SEARCH InOrder
+  // same as PreOrder but fist we traverse the entire left side, then visit the nodes and then traverse the entire rigth side:
+  // create a variable to store the values of the nodes visited
+  // store the root of the BST in a variable called current
+  // write a helper funciton which accets a node
+  //    if the node has a left property, call the helper function with the left property on the noed
+  //    if the node has a right property, call the helper function with the right property on the noed
+  //    push the value of the node to the variable that stores the values
+  // invoke the helper function with the current variable
+  // return the array of values
+  DFSInOrder() {
+    let data = [];
+    let current = this.root;
+    function traverse(node) {
+      if (node.left) traverse(node.left);
+      data.push(node.value);
+      if (node.right) traverse(node.right);
     }
     traverse(current);
     return data;
@@ -134,3 +156,4 @@ console.log(tree);
 console.log(tree.BFS());
 console.log(tree.DFSPreOrder());
 console.log(tree.DFSPostOrder());
+console.log(tree.DFSInOrder());
