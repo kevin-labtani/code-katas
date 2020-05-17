@@ -28,6 +28,60 @@ class MaxBinaryHeap {
       idx = parentIdx;
     }
   }
+
+  // REMOVE (we typically remove the root and then sink down)
+  // swap the first value in the values property with the last one
+  // pop form the values property so you can return the value at the end
+  // have the new root "sink down" to the correct spot:
+  //    your parentindex starts at 0 (the root)
+  //    find the index of the left child 2*index + 1 (make sure it's within bounds)
+  //    find the index of the right child 2*index + 2 (make sure it's within bounds)
+  //    if either child is greater than the element, swap; if both are larger, swap the largest
+  //    the child index yous wapped to now becomes the parent index
+  //    keep looking and wmapping until neither child is larger than the element
+  // return the old root
+  extractMax() {
+    const max = this.values[0];
+    const end = this.values.pop();
+    if (this.values.length > 0) {
+      this.values[0] = end;
+      this.sinkDown();
+    }
+    return max;
+  }
+
+  sinkDown() {
+    let idx = 0;
+    const length = this.values.length;
+    const element = this.values[0];
+    while (true) {
+      let leftChildIdx = 2 * idx + 1;
+      let rightChildIdx = 2 * idx + 2;
+      let leftChild;
+      let rightChild;
+      let swap = null;
+
+      if (leftChildIdx < length) {
+        leftChild = this.values[leftChildIdx];
+        if (leftChildIdx > element) {
+          swap = leftChildIdx;
+        }
+      }
+      if (rightChildIdx < length) {
+        rightChild = this.values[rightChildIdx];
+        if (
+          (swap === null && rightChild > element) ||
+          (swap !== null && rightChild > leftChild)
+        ) {
+          swap = rightChildIdx;
+        }
+      }
+      if (swap === null) break;
+      this.values[idx] = this.values[swap];
+      this.values[swap] = element;
+      idx = swap;
+    }
+  }
 }
 
 let heap = new MaxBinaryHeap();
@@ -44,4 +98,8 @@ console.log(heap);
 heap.insert(45);
 console.log(heap);
 heap.insert(99);
+console.log(heap);
+heap.extractMax();
+console.log(heap);
+heap.extractMax();
 console.log(heap);
