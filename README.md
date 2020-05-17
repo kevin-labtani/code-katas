@@ -308,7 +308,28 @@ not guaranteed though, some BST configurations are really slow (eg (3 > 17 > 19 
   - inOrder
 
 BFS has a lof of nodes to keep track of (in the queue we use to keep track of the nodes visited), it has a bigger space complexity than DFS for big, large trees  
-Time complexity is the same for BFS and DFS  
+Time complexity is the same for BFS and DFS
 
 DFS InOrder is used commonly with BST as it gets us the nodes in the tree in their undrelying order  
-DFS PreOrder can be used to "export" a tree structure so that it is easily reconstructed or copied  
+DFS PreOrder can be used to "export" a tree structure so that it is easily reconstructed or copied
+
+### Heaps
+
+Heaps are another category of trees  
+We'll focus on Binary Heaps, they are similar to a binary search tree but with some different rules.  
+In a MaxBinaryHeap, parent nodes are always larger than child nodes; in a MinBinaryHeap, parent nodes are always smaller than child nodes
+
+**Max Binary Heap**
+
+- each parent has at most two child nodes
+- the value of each parent nodes is always greater than its child nodes
+- in a max binary heap theparent is greater than the children, but there are no guarantees between siblings nodes
+- a binary heap is as compact as possible; all the children of each node are as full as they can be and left children are filled out first
+
+Binary heaps are usd to implement Priority Queues, which are very commonly used data structures  
+THey're also used quite a bit with graphs traversal
+
+We can use an array to store a binary heap  
+for any index of an array _n_, the left child is stored at _2n+1_ and the right child is stored at _2n+2_  
+for any child at index _n_, it's parent is at index _Math.floor((n-1)/2)_  
+
