@@ -313,11 +313,19 @@ Time complexity is the same for BFS and DFS
 DFS InOrder is used commonly with BST as it gets us the nodes in the tree in their undrelying order  
 DFS PreOrder can be used to "export" a tree structure so that it is easily reconstructed or copied
 
-### Heaps
+### Binary Heaps
 
 Heaps are another category of trees  
 We'll focus on Binary Heaps, they are similar to a binary search tree but with some different rules.  
 In a MaxBinaryHeap, parent nodes are always larger than child nodes; in a MinBinaryHeap, parent nodes are always smaller than child nodes
+
+Big O of Binary Heaps:
+
+- insertion: O(log N)
+- removal: O(log N)
+- searching: O(N)
+
+Worst case scenario of binary search tree isn't possible for heaps as it goes against the rules for constructing heaps.
 
 **Max Binary Heap**
 
@@ -336,4 +344,4 @@ for any child at index _n_, it's parent is at index _Math.floor((n-1)/2)_
 **Priority Queue**
 
 A data structure where each element has a priority. Elements with higher priorities are served before elements with lower priorities  
-We can implement a priority queue with a heap  
+We can implement a priority queue with a heap
