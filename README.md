@@ -331,5 +331,9 @@ THey're also used quite a bit with graphs traversal
 
 We can use an array to store a binary heap  
 for any index of an array _n_, the left child is stored at _2n+1_ and the right child is stored at _2n+2_  
-for any child at index _n_, it's parent is at index _Math.floor((n-1)/2)_  
+for any child at index _n_, it's parent is at index _Math.floor((n-1)/2)_
 
+**Priority Queue**
+
+A data structure where each element has a priority. Elements with higher priorities are served before elements with lower priorities  
+We can implement a priority queue with a heap  
