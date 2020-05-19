@@ -345,3 +345,23 @@ for any child at index _n_, it's parent is at index _Math.floor((n-1)/2)_
 
 A data structure where each element has a priority. Elements with higher priorities are served before elements with lower priorities  
 We can implement a priority queue with a heap
+
+### Hash Tables
+
+used to store kay-value pairs  
+like arrays, but the keys are not ordered  
+unlike arrays, hash tables are fast for all of the following operations: finding values, adding new values, and removing values
+
+hash tables in the wild: python has dictionaries, js has objects and maps, java goa nd scale have maps, ruby has hashes
+
+to implement a hash table, we'll be using an array  
+in order to look up values by key, we nees a way to convert keys into valid array indices  
+a function that performs this task is called a hash function
+
+what makes a good hash function? (not a cryptographically secure one!)
+
+- fast
+- doesn't cluster outputs at specific indices, but distributes uniforml
+- deterministic (same input yields same output)  
+
+
