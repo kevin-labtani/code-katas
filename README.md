@@ -362,6 +362,15 @@ what makes a good hash function? (not a cryptographically secure one!)
 
 - fast
 - doesn't cluster outputs at specific indices, but distributes uniforml
-- deterministic (same input yields same output)  
+- deterministic (same input yields same output)
 
+we deal with collisions with separate chaining (at each index in our array we store a value using eg. an array or a linked list) or linear probing (we store only one value par slot in our array and when we find a collision, we search through the array to find the next empty slot)
 
+Big O of Hash Tables:
+(average case)
+
+- insertion: O(1)
+- deletion: O(1)
+- access: O(1)
+
+big O depends on the hash function, but constant time is possible for these operations with a good hash function
