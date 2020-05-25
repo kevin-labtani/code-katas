@@ -1,4 +1,4 @@
-# This repo holds my solutions to attempted [codewars](https://www.codewars.com/) katas as well as general problem solving, algo & DS stuff.
+# This repo holds my solutions to attempted [codewars](https://www.codewars.com/) katas as well as general problem solving, algo & DS.
 
 [![My codewars](https://www.codewars.com/users/kevin-labtani/badges/large)](https://www.codewars.com/users/kevin-labtani)
 
@@ -374,3 +374,32 @@ Big O of Hash Tables:
 - access: O(1)
 
 big O depends on the hash function, but constant time is possible for these operations with a good hash function
+
+### Graphs
+
+a graph data structure consists of a finite set of vertices, together with a set of unordered pairs of those vertices for an undericted graph or a set of ordered pairs for a directed graph
+
+basically, a graph is a collection of nodes and the collections between those nodes
+
+graphs are used to store social networks, maps (roads and connections between cities), recommendations (like on amazon),...
+
+graph terms:
+
+- vertex - a node
+- edge - the connection betqeen nodes
+- weighted/unweigted - values assigned to distances between vertices
+- directed/undirected - directions assigned to distance between vertices
+
+we're using an Adjacency Matrix to store graphs; another approach would be to use an Adjacency List (an array or a hash table)
+
+Big O:  
+(|V| = number of vertices, |E| = number of edges)
+
+|   Operation   | Adjacacency List | Adjacency Matrix |
+| :-----------: | :--------------: | :--------------: |
+|  Add Vertex   |       O(1)       |    O(\|V²\|)     |
+|   Add Edge    |       O(1)       |       O(1)       |
+| Remove Vertex | O(\|V\| + \|E\|) |    O(\|V²\|)     |
+| Remove Vertex |     O(\|E\|)     |       O(1)       |
+|     Query     | O(\|V\| + \|E\|) |       O(1)       |
+|    Storage    | O(\|V\| + \|E\|) |    O(\|V²\|)     |
