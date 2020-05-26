@@ -390,7 +390,7 @@ graph terms:
 - weighted/unweigted - values assigned to distances between vertices
 - directed/undirected - directions assigned to distance between vertices
 
-we're using an Adjacency Matrix to store graphs; another approach would be to use an Adjacency List (an array or a hash table)
+we can use either an Adjacency Matrix or an Adjacency List (an array or a hash table) to store a graph
 
 Big O:  
 (|V| = number of vertices, |E| = number of edges)
@@ -403,3 +403,6 @@ Big O:
 | Remove Vertex |     O(\|E\|)     |       O(1)       |
 |     Query     | O(\|V\| + \|E\|) |       O(1)       |
 |    Storage    | O(\|V\| + \|E\|) |    O(\|V²\|)     |
+
+Adjacency List can take up less space, are faster to iterate over all edges, can be slower to lookup specific edge  
+Adjacency Matrix take up more space, are slower to iterate over all edges, are faster to lookup specific edge
