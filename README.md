@@ -301,7 +301,7 @@ not guaranteed though, some BST configurations are really slow (eg (3 > 17 > 19 
 
 ### Tree traversal
 
-- Breath First Search
+- Breadth First Search
 - Depth First Search
   - PreOrder
   - PostOrder
@@ -406,3 +406,19 @@ Big O:
 
 Adjacency List can take up less space, are faster to iterate over all edges, can be slower to lookup specific edge  
 Adjacency Matrix take up more space, are slower to iterate over all edges, are faster to lookup specific edge
+
+## Graph Traversal
+
+visiting/updating/checking each vertex in a graph  
+uses:
+
+- peer to peer networking
+- web crawlers
+- finding closesst matches/recommendations
+- shortest path problem
+  - gps navigation
+  - solving mazes
+  - AI (shortest path to win a game)
+
+two main options : depth first traversal or breadth first traversal  
+
