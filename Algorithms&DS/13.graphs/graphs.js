@@ -78,6 +78,73 @@ class Graph {
 
     return result;
   }
+
+  // DEPTH FIRST TRAVERSAL (ITERATIVE)
+  // accepts a starting node
+  // create a stack to keep track of vertices
+  // create a list to store the end result to be returned
+  // create an object to store visited vertices
+  // add the starting vertex to the stack, and mak it visited
+  // while the stack has something in it
+  //    pop the next vertex from the stack
+  //    if that vertex hasn't been visited yet:
+  //        mark it as visited
+  //        add it to the result list
+  //        push all of its neightbors into the stack
+  // return the result array
+  // nb we'll end up with a different order than the recursive solution
+  depthFirstIterative(start) {
+    const stack = [start];
+    const result = [];
+    const visited = {};
+    let currentVertex;
+    visited[start] = true;
+
+    while (stack.length) {
+      currentVertex = stack.pop();
+      result.push(currentVertex);
+
+      this.adjacencyList[currentVertex].forEach((neighbor) => {
+        if (!visited[neighbor]) {
+          visited[neighbor] = true;
+          stack.push(neighbor);
+        }
+      });
+    }
+    return result;
+  }
+
+  // BREADTH FIRST TRAVERSAL
+  // accept a starting vertex
+  // create a queue and place the startin gvertex in it
+  // create an array to store the nodes visited
+  // create an object to store the nodes visited
+  // mark the starting vertex as visited
+  // loop as long as there is anything in the queue
+  // remove the first vertex from the queue and push it into the array that stores nodes visited
+  // loop over each vertex in the adjacency list for the vertex you are visiting
+  // if it is not inside the object that stores nides visited, mark it as visited an enqueue that vertex
+  // once you have finished looping, return the array of visited nodes
+  breadthFirst(start) {
+    const queue = [start];
+    const result = [];
+    const visited = {};
+    let currentVertex;
+    visited[start] = true;
+
+    while (queue.length) {
+      currentVertex = queue.shift();
+      result.push(currentVertex);
+
+      this.adjacencyList[currentVertex].forEach((neighbor) => {
+        if (!visited[neighbor]) {
+          visited[neighbor] = true;
+          queue.push(neighbor);
+        }
+      });
+    }
+    return result;
+  }
 }
 
 let g = new Graph();
@@ -98,6 +165,8 @@ g.addEdge("D", "F");
 g.addEdge("E", "F");
 console.log(g);
 console.log(g.depthFirstRecursive("A"));
+console.log(g.depthFirstIterative("A"));
+console.log(g.breadthFirst("A"));
 //          A
 //        /   \
 //       B     C
