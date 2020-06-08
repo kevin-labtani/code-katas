@@ -420,5 +420,17 @@ uses:
   - solving mazes
   - AI (shortest path to win a game)
 
-two main options : depth first traversal or breadth first traversal  
+two main options : depth first traversal or breadth first traversal
+
+## Dijkstra's Algorithm
+
+algorithm to find the shoortest path between two vertices on a graph
+
+## Dynamic programming
+
+a method for solving a complex problem by brezaking it down into a collection of simpler subproblems, soving each of those subproblems just once, ans storign their solutions.  
+it only works on problems with an optimal substructure and overlapping subproblems
+
+overlapping subproblems: a problem is said to have overlapping subproblems if it can be broken down into subproblems which are reused several times (eg, fibonacci sequence: to find fib(3) you need to add fib(2) and fib(1); to get fib(4) you need to add fib(3) and fib(2);...)  
+optimal substructure: a problem is said to have an optimal substructure if an optimal solution can be constructed from the optimal solutions of its subproblems
 
