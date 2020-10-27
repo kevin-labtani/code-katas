@@ -2,6 +2,11 @@
 
 [![My codewars](https://www.codewars.com/users/kevin-labtani/badges/large)](https://www.codewars.com/users/kevin-labtani)
 
+Solutions to JavaScript katas are in the JavaScript folder.  
+Solutions to PHP katas are in the PHP folder.
+
+The rest of this readme are my notes on General Problem Solving, Algorithms and Data Structures. The code for that is in the Algorithms&DS folder.
+
 ## Problem solving approach
 
 An algorithm is a process or set of steps to accomplish a certain task.
@@ -433,4 +438,3 @@ it only works on problems with an optimal substructure and overlapping subproble
 
 overlapping subproblems: a problem is said to have overlapping subproblems if it can be broken down into subproblems which are reused several times (eg, fibonacci sequence: to find fib(3) you need to add fib(2) and fib(1); to get fib(4) you need to add fib(3) and fib(2);...)  
 optimal substructure: a problem is said to have an optimal substructure if an optimal solution can be constructed from the optimal solutions of its subproblems
-
